@@ -67,13 +67,16 @@ class Interface:
 
 
     def _restore_data(self):
-        with open('contact.csv', 'r') as f:
-            reader = csv.reader(f)
-            for idx, row in enumerate(reader):
-                if idx == 0:
-                    continue
+        try: 
+            with open('contact.csv', 'r') as f:
+                reader = csv.reader(f)
+                for idx, row in enumerate(reader):
+                    if idx == 0:
+                        continue
 
-                self.cb.add(row[0], row[1], row[2])
+                    self.cb.add(row[0], row[1], row[2])
+        except Exception:
+            print('')
 
     def _render_alert(self, message):
         print('\t{}' . format(message))
