@@ -60,12 +60,12 @@ class ContactBook:
 
     def show_all(self):
         if len(self._contacts) == 0:
-            self.utility.render_alert('Mensaje del sistema: No existen contactos registrados')
+            self.utility.render('No existen contactos registrados')
         for contact in self._contacts:
             self._print_cuztomizer(contact)
 
     def _not_found(self):
-        self.utility.render_alert('No se encontraron registros.')
+        self.utility.render('No se encontraron registros.')
 
     def _print_cuztomizer(self, contact):
         print('\n\t---------------------------------------------------')
